@@ -15,7 +15,7 @@ public class Curso {
     private List<Alumno> listaDeAlumnos;
 
 
-    public Curso(String nombre, Integer codigoDeCurso, ProfesorTitular profesorTitular, ProfesorAdjunto profesorAdjunto, Integer cupoMaximoDeAlumnos, List<Alumno> listaDeAlumnos) {
+    public Curso(String nombre, Integer codigoDeCurso,Integer cupoMaximoDeAlumnos) {
         this.nombre = nombre;
         this.codigoDeCurso = codigoDeCurso;
         this.profesorTitular = profesorTitular;
@@ -28,10 +28,10 @@ public class Curso {
         if(this.cupoMaximoDeAlumnos > this.listaDeAlumnos.size()){
             listaDeAlumnos.add(unAlumno);
             System.out.println("El alumno ha sido agregado con éxito.");
-            return true
+            return true;
         } else{
+            System.out.println("El curso esta completo.");
             return false;
-            System.out.println("El curso está completo.");
         }
     }
 
