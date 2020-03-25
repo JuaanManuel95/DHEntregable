@@ -11,4 +11,16 @@ public class Alumno {
         this.apellido = apellido;
         this.codigoDeAlumno = codigoDeAlumno;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public Integer getCodigoDeAlumno() {
+        return codigoDeAlumno;
+    }
 }
