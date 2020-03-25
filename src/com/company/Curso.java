@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Curso {
@@ -20,8 +21,27 @@ public class Curso {
         this.profesorTitular = profesorTitular;
         this.profesorAdjunto = profesorAdjunto;
         this.cupoMaximoDeAlumnos = cupoMaximoDeAlumnos;
-        this.listaDeAlumnos = listaDeAlumnos;
+        this.listaDeAlumnos = new ArrayList<>();
     }
+
+    public boolean agregarUnAlumno(Alumno unAlumno){
+        if(this.cupoMaximoDeAlumnos > this.listaDeAlumnos.size()){
+            listaDeAlumnos.add(unAlumno);
+            System.out.println("El alumno ha sido agregado con éxito.");
+            return true
+        } else{
+            return false;
+            System.out.println("El curso está completo.");
+        }
+    }
+
+    public void eliminarAlumno(Alumno unAlumno){
+        this.listaDeAlumnos.remove(unAlumno);
+        System.out.println("El alumno ha sido retirado del curso.");
+    }
+
+
+
     public ProfesorTitular getProfesorTitular() {
         return profesorTitular;
     }
