@@ -41,4 +41,9 @@ public class DigitalHouseManager {
         this.listaDeProfesores.add(unProfesorAdjunto);
         System.out.println("El Profesor Adjunto se ha unido al curso.");
     }
+
+    public void altaProfesorTitular(String nombre, String apellido, Integer codigoProfesor, String especialidad){
+        Profesor unProfesorTitular = new ProfesorTitular(nombre, apellido, codigoProfesor, especialidad);
+
+    }
 }

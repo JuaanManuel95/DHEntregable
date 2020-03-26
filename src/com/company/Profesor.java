@@ -1,16 +1,16 @@
 package com.company;
 
-public class Profesor {
+public abstract class Profesor {
 
     private String nombre;
     private String apellido;
     private Integer antiguedad;
     private Integer codigoDeProfesor;
 
-    public Profesor(String nombre, String apellido, Integer antiguedad, Integer codigoDeProfesor) {
+    public Profesor(String nombre, String apellido, Integer codigoDeProfesor) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.antiguedad = antiguedad;
+        this.antiguedad = 0;
         this.codigoDeProfesor = codigoDeProfesor;
     }
 
