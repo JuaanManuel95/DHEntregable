@@ -3,7 +3,7 @@ package com.company;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DigitalHouseManager {
+public abstract class DigitalHouseManager {
 
     private List<Alumno> listaDeAlumnos;
     private List<Profesor> listaDeProfesores;
@@ -44,6 +44,31 @@ public class DigitalHouseManager {
 
     public void altaProfesorTitular(String nombre, String apellido, Integer codigoProfesor, String especialidad){
         Profesor unProfesorTitular = new ProfesorTitular(nombre, apellido, codigoProfesor, especialidad);
+        this.listaDeProfesores.add(unProfesorTitular);
+        System.out.println("El profesor titular se ha unido al curso.");
 
     }
+
+    public void bajaProfesor(Integer codigoProfesor){
+        for (Profesor profesor : listaDeProfesores){
+            if (profesor.getCodigoDeProfesor().equals(codigoProfesor)){
+                this.listaDeProfesores.remove(profesor);
+                System.out.println("El profesor ha abandonado el curso.");
+                break;
+            }
+        }
+    }
+
+    public void altaAlumno(String nombre, String apellido, Integer codigoAlumno){
+        Alumno unAlumno = new Alumno(nombre,apellido, codigoAlumno);
+        this.listaDeAlumnos.add(unAlumno);
+        System.out.println("El alumno se ha inscripto correctamente.");
+    }
+
+
+
+
+
+
+
 }
