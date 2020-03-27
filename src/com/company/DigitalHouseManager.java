@@ -3,7 +3,7 @@ package com.company;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class DigitalHouseManager {
+public class DigitalHouseManager {
 
     private List<Alumno> listaDeAlumnos;
     private List<Profesor> listaDeProfesores;
