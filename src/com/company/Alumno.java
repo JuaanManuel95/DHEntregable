@@ -1,6 +1,9 @@
 package com.company;
 
+import java.util.Objects;
+
 public class Alumno {
+
 
     private String nombre;
     private String apellido;
@@ -23,4 +26,15 @@ public class Alumno {
     public Integer getCodigoDeAlumno() {
         return codigoDeAlumno;
     }
+
+
+    @Override
+    public boolean equals(Object alumnoAComparar) {
+        if (!(alumnoAComparar instanceof Alumno)) {
+            return false;
+        }
+        Alumno otroAlumno = (Alumno) alumnoAComparar;
+        return otroAlumno.getCodigoDeAlumno().equals(this.codigoDeAlumno);
+    }
+
 }

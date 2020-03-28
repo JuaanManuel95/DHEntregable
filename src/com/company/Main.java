@@ -1,5 +1,9 @@
 package com.company;
 
+//--------- PUNTO K --------
+//En el UML, dentro de la clase "Alumno", le agregaría el atributo "-listaDeInscripciones: List<Inscripcion>"
+// y el método correspondiente para recorrer dicha lista y asi ver en que cursos se ha anotado.
+
 public class Main {
 
     public static void main(String[] args) {
@@ -7,8 +11,8 @@ public class Main {
 
         digitalHouseManager.altaProfesorTitular("Albus","Dumbledore", 001, "Artes Oscuras");
         digitalHouseManager.altaProfesorTitular("Severus", "Snape", 002, "pociones");
-        digitalHouseManager.altaProfesorAdjunto("Remus", "Lupin", 003);
-        digitalHouseManager.altaProfesorAdjunto("Dolores", "Umbridge", 004);
+        digitalHouseManager.altaProfesorAdjunto("Remus", "Lupin", 003, 4);
+        digitalHouseManager.altaProfesorAdjunto("Dolores", "Umbridge", 004, 3);
 
         digitalHouseManager.altaCurso("Full Stack", 20001, 3);
         digitalHouseManager.altaCurso("Android", 20002, 2);
@@ -30,10 +34,7 @@ public class Main {
 
         digitalHouseManager.bajaCurso(20001);
 
-
-
-
-
-
     }
 }
+
+
