@@ -36,8 +36,8 @@ public class DigitalHouseManager {
 
     }
 
-    public void altaProfesorAdjunto(String nombre, String apellido, Integer codigoDeProfesor, Integer cantidadDeHoras){
-        Profesor unProfesorAdjunto = new ProfesorAdjunto(nombre, apellido, codigoDeProfesor, cantidadDeHoras);
+    public void altaProfesorAdjunto(String nombre, String apellido, Integer codigoDeProfesor){
+        Profesor unProfesorAdjunto = new ProfesorAdjunto(nombre, apellido, codigoDeProfesor);
         this.listaDeProfesores.add(unProfesorAdjunto);
         System.out.println("El Profesor Adjunto se ha unido al curso.");
     }
@@ -63,12 +63,64 @@ public class DigitalHouseManager {
         Alumno unAlumno = new Alumno(nombre,apellido, codigoAlumno);
         this.listaDeAlumnos.add(unAlumno);
         System.out.println("El alumno se ha inscripto correctamente.");
+
     }
 
+    public void inscribirAlumno(Integer codigoAlumno, Integer codigoCurso){
+        Curso cursoAComenzar = null;
+        Alumno alumnoASumar = null;
+        for(Curso curso : listaDeCursos){
+            if(codigoCurso.equals(curso.getCodigoDeCurso())){
+                cursoAComenzar = curso;
+                break;
+            }
+        }
 
+        for(Alumno alumno : listaDeAlumnos){
+            if(codigoAlumno.equals(alumno.getCodigoDeAlumno())){
+                alumnoASumar = alumno;
+                break;
+            }
+        }
 
+        if(cursoAComenzar.agregarUnAlumno(alumnoASumar)) {
+            Inscripcion nuevaInscripcion = new Inscripcion(alumnoASumar, cursoAComenzar);
+            listaDeInscripcion.add(nuevaInscripcion);
+            System.out.println("El alumno ha sido inscripto con éxito.");
+        } else {
+            System.out.println("El alumno no se ha podido incorporar.");
+        }
 
+    }
 
+    public void asignarProfesores(Integer codigoCurso, Integer codigoProfesorTitular, Integer codigoProfesorAdjunto){
+        ProfesorTitular asignarProfesorTitular = null;
+        ProfesorAdjunto asignarProfesorAdjunto = null;
+        Curso asignarCurso = null;
+        for (Profesor profesor : listaDeProfesores){
+            if(codigoProfesorTitular.equals(profesor.getCodigoDeProfesor())){
+                asignarProfesorTitular = (ProfesorTitular) profesor;
+                break;
 
+            }
+        } System.out.println("El profesor titular ha sido asignado.");
+
+        for (Profesor profesor : listaDeProfesores){
+            if(codigoProfesorAdjunto.equals(profesor.getCodigoDeProfesor())){
+                asignarProfesorAdjunto = (ProfesorAdjunto) profesor;
+                break;
+            }
+        }
+        System.out.println("El profesor adjunto ha sido asignado.");
+
+        for (Curso curso : listaDeCursos){
+            if(codigoCurso.equals(curso.getCodigoDeCurso())){
+                asignarCurso = curso;
+                break;
+            }
+        }
+        System.out.println("El curso ha sido asignado con éxito.");
+
+    }
 
 }

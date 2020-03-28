@@ -1,12 +1,10 @@
 package com.company;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Curso {
-
-
-
     private String nombre;
     private Integer codigoDeCurso;
     private ProfesorTitular profesorTitular;
