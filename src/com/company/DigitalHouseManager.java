@@ -60,8 +60,8 @@ public class DigitalHouseManager {
         }
     }
 
-    public void altaAlumno(String nombre, String apellido, Integer codigoAlumno){
-        Alumno unAlumno = new Alumno(nombre,apellido, codigoAlumno);
+    public void altaAlumno(String nombre, String apellido, Integer codigoAlumno, Boolean esEstudioso){
+        Alumno unAlumno = new Alumno(nombre,apellido, codigoAlumno, esEstudioso);
         this.listaDeAlumnos.add(unAlumno);
         System.out.println("El alumno se ha inscripto correctamente.");
 
