@@ -45,4 +45,15 @@ public abstract class Profesor {
     public void setCodigoDeProfesor(Integer codigoDeProfesor) {
         this.codigoDeProfesor = codigoDeProfesor;
     }
+    @Override
+    public boolean equals(Object profesorAComparar) {
+        if (!(profesorAComparar instanceof Profesor)) {
+            return false;
+        }
+        Profesor otroProfesor = (Profesor) profesorAComparar;
+        return otroProfesor.getCodigoDeProfesor().equals(this.codigoDeProfesor);
+    }
+
+
+
 }

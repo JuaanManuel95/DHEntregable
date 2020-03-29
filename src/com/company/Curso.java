@@ -72,4 +72,14 @@ public class Curso {
     public void setCodigoDeCurso(Integer codigoDeCurso) {
         this.codigoDeCurso = codigoDeCurso;
     }
+
+    @Override
+    public boolean equals(Object cursoAComparar) {
+        if (!(cursoAComparar instanceof Curso)) {
+            return false;
+        }
+        Curso otroCurso = (Curso) cursoAComparar;
+        return otroCurso.getCodigoDeCurso().equals(this.codigoDeCurso);
+    }
+
 }

@@ -1,5 +1,6 @@
 package com.company;
 
+import java.net.Inet4Address;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,8 +37,8 @@ public class DigitalHouseManager {
 
     }
 
-    public void altaProfesorAdjunto(String nombre, String apellido, Integer codigoDeProfesor){
-        Profesor unProfesorAdjunto = new ProfesorAdjunto(nombre, apellido, codigoDeProfesor);
+    public void altaProfesorAdjunto(String nombre, String apellido, Integer codigoDeProfesor, Integer horasDeConsulta){
+        Profesor unProfesorAdjunto = new ProfesorAdjunto(nombre, apellido, codigoDeProfesor,horasDeConsulta);
         this.listaDeProfesores.add(unProfesorAdjunto);
         System.out.println("El Profesor Adjunto se ha unido al curso.");
     }
@@ -59,8 +60,8 @@ public class DigitalHouseManager {
         }
     }
 
-    public void altaAlumno(String nombre, String apellido, Integer codigoAlumno){
-        Alumno unAlumno = new Alumno(nombre,apellido, codigoAlumno);
+    public void altaAlumno(String nombre, String apellido, Integer codigoAlumno, Boolean esEstudioso){
+        Alumno unAlumno = new Alumno(nombre,apellido, codigoAlumno, esEstudioso);
         this.listaDeAlumnos.add(unAlumno);
         System.out.println("El alumno se ha inscripto correctamente.");
 
